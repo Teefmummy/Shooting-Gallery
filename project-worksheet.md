@@ -20,43 +20,11 @@ This schedule will be used to keep track of your progress throughout the week an
 Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
 My project is a shooting gallery game. It will randomly place targets on a board. the goal is to click all the targets before the time runs out. If you do hit all the targets in time, then you can progress to the next level. each level will be coded to include a certain number of enemies. I would like to make three levels. 
 
-Landing Page:
-This will be an overlay of the game with a start button
-On click, the start button will initialize the game. 
-the overlay will be removed
-Landing Page - Post MVP: 
-Animation for the button.
-big svg graphic image of a hunter
 
-Game page:
-a wooden shelf with different levels. 
-the shelf is made of multiple divs (20X 10?) 
-Top left has Timer and points section
-Overlay animates with "Ready", "Set", "Go!"
-timer decriments. 
-Page populates with cans and bottles randomly generated in the shelf's divs
-user clicks the cans and bottles. 
-on click the can jumps off the page and the score is increased by the item's score.
-cans are worth 1
-bottles are worth 5
-post MVP = there will randomly spawn bees who move in a parabolic arc across the screen. the bees are worth 15 pts.
 
-if user hits all cans and has time left then they move to next level.
-if not, then they fail and display score with a replay button
 
-if they beat the level then they go to the next level where there are more bottles, cans (and bees)
 
-build 3 levels. on completion of all three throw a winner screen with their score and replay button
 
-Loser page: 
-You lose,
-score,
-retry? - replays the game
-
-Winner page:
-You win, 
-score,
-retry?
 
 
 ## Wireframes
@@ -76,23 +44,69 @@ Include a full list of features that have been prioritized based on the `Time an
 ### Landing Page
 What will a player see when they start your game?
 
+Landing Page:
+This will be an overlay of the game with a start button
+On click, the start button will initialize the game. 
+the overlay will be removed
+Landing Page - Post MVP: 
+Animation for the button.
+big svg graphic image of a hunter
+
 ### Game Initialization
 What will a player see when the game is started? 
+
+A ready set go message that when it goes away, the timer starts and the game begins.
 
 ### Playing The Game
 What will be the flow of the game, what will the user be expeted to do and what will the user expect from the gam
 
+a wooden shelf with different levels. 
+the shelf is made of multiple divs (20X 10?) 
+Top left has Timer and points section
+Overlay animates with "Ready", "Set", "Go!"
+timer decriments. 
+Page populates with cans and bottles randomly generated in the shelf's divs
+user clicks the cans and bottles. 
+on click the can jumps off the page and the score is increased by the item's score.
+cans are worth 1
+bottles are worth 5
+post MVP = there will randomly spawn bees who move in a parabolic arc across the screen. the bees are worth 15 pts.
+
+if user hits all cans and has time left then they move to next level.
+if not, then they fail and display score with a replay button
+
+if they beat the level then they go to the next level where there are more bottles, cans (and bees)
+
+build 3 levels. on completion of all three throw a winner screen with their score and replay button
+
 ### Winning The Game
 What does it look like when the game ends, what determines winning or losing?
+
+Loser page: 
+You lose,
+score,
+retry? - replays the game
+
+Winner page:
+You win, 
+score,
+retry?
+
+You win the game if you hit all the targets within the time limit. you lose if you don't
 
 ### Game Reset
 How will the user restart the game once it has been completed.
 
+On the loser/win screen you press a button which reinitializes the game at stage 1
+
 ## MVP 
 
 Include the full list of features that will be part of your MVP 
+a board that populates with clickable objects that has a win and loss condition.
 
 ## POST MVP
+a bee target that goes across the screen in a parabolic fashion. 
+lots of animation flourishes
 
 Include the full list of features that you are considering for POST MVP
 ## Functional Components
@@ -103,8 +117,14 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
-| Total |  | 10hrs| 12hrs | 12hrs |
+| Game Logic | H | 10hrs|  |  |
+| Game page | H | 5hrs|  |  |
+| target sprites | L | 4hrs|  |  |
+| game board sprites | L | 2hrs|  |  |
+| landing Page overlay| H | 3hrs|  |  |
+| Win/Loss page overlay | H | 2hrs|  |  |
+| Post MVP | H | 10hrs|  |  |
+| Total |  | 36hrs| 12hrs | 12hrs |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
