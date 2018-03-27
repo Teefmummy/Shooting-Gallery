@@ -124,7 +124,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | landing Page overlay| H | 3hrs|  |  |
 | Win/Loss page overlay | H | 2hrs|  |  |
 | Post MVP | H | 10hrs|  |  |
-| Total |  | 36hrs| 12hrs | 12hrs |
+| Total |  | 36hrs|  |  |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
