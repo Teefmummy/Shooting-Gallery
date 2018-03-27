@@ -4,8 +4,8 @@
 
 This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
 
-|  Day | Deliverable | 
-|---|---| 
+|  Day | Deliverable | Status |
+|---|---|---|
 |Day 1: Tue| Wireframes and Priority Matrix|
 |Day 2: Wed| Project Approval /  Pseudocode / actual code|
 |Day 3: Thur| Basic Clickable Model |
