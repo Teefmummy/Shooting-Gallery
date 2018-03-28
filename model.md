@@ -11,6 +11,13 @@ A screen signalling the start of a round. countdown? beep beep BEEEP. 3,2,1, GO!
 repeat...
 On completion of level 3. A win screen pops up. you can retry which will begin the process anew from lvl 1
 
+win logic: if level array matches player array & timer has not reached 0 then, next level
+    increment level
+        if level array matches player array & timer has not reached 0 then, next level
+    increment level
+        if level array matches player array & timer has not reached 0 then, you win
+    display win page
+
 
 HTML implementation => View
 landing page > overlay,
@@ -47,5 +54,6 @@ user interaction => Controller
 landing page >> click start game button, *click button to navigate to high score page
 game page >> click targets
 failure page >> click to restart game
-win page >> click to restart game, *form to enter high score data. on completion of form, shows high score page
+win page >> click to restart game, *form to enter high score data. on completion of form, shows high score page 
+high score page >> click to restart game
 

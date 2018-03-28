@@ -1,4 +1,117 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: lightblue;
+}
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,1);
+  z-index: 9000;
+}
+
+.landing-page {
+  background-image: url('../images/bee.png');
+  visibility: visible;
+}
+
+.landing-container {
+  align-items: center;
+  background-color: rgba(212,25,66,1);
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  width: 1000px;
+  margin: 100px auto;
+}
+
+.landing-container h1{
+  padding: 10px;
+  margin: auto;
+}
+
+.landing-container button{
+  height: 100px;
+  width: 300px;
+  border-radius: 5%;
+  font-family: 'Press Start 2P', cursive;
+}
+.game-page {
+}
+.game-details {
+  background-color: rgba(255,199,0,1);
+  padding: 5px 12px;
+  border-radius: 0 0 5% 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 283px;
+}
+.game-page .game-board {
+  justify-content: flex-start;
+  height: 525px;
+  width: 80%;
+  margin-top: 125px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255,111,37);
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.shelf {
+  background-color: black;
+  height: 2%;
+  width: 100%;
+}
+.row {
+  display: flex;
+  width: 100%;
+  height: 18%;
+  align-content: flex-start;
+  background-color: red;
+}
+.row div {
+  width: 10%;
+  height: 100%;
+  background-color: rgb(255,111,37);
+  border-right: solid black 1px;
+}
+
+.final-screen {
+  background-image: url('../images/bee.png');
+  visibility: hidden;
+  background-color: rgba(255,233,172,.9);
+  z-index: 8999;
+}
+
+.final-screen .final-container {
+  align-items: center;
+  background-color: rgba(212,25,66,1);
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  width: 1000px;
+  margin: 100px auto;
+}
+.bottle {
+  height: 100%;
+  width: 100%;
+  background-image: url('../images/bottle.png');
+}
+.can {
+  background-image: url('../images/can.png');
+}
+.bee {
+  background-image: url('../images.bee.png');
+}
 
 
 
