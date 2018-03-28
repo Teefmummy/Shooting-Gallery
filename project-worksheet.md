@@ -21,12 +21,6 @@ Use this section to describe your final project and perhaps any links to relevan
 My project is a shooting gallery game. It will randomly place targets on a board. the goal is to click all the targets before the time runs out. If you do hit all the targets in time, then you can progress to the next level. each level will be coded to include a certain number of enemies. I would like to make three levels. 
 
 
-
-
-
-
-
-
 ## Wireframes
 
 Include images of your wireframes. 
@@ -38,6 +32,10 @@ Include images of your wireframes.
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+Game Logic - top priority
+html and css layout - high priority - first to tackle
+Overlays - high priority
+
 
 ## Game Components
 
@@ -104,9 +102,14 @@ On the loser/win screen you press a button which reinitializes the game at stage
 Include the full list of features that will be part of your MVP 
 a board that populates with clickable objects that has a win and loss condition.
 
+The game will have clickable divs that give you score and a timer which counts down. 
+the landing page will lead to the game page
+
+
 ## POST MVP
 a bee target that goes across the screen in a parabolic fashion. 
 lots of animation flourishes
+A form on completion to enter your high score, and a high score overlay page.
 
 Include the full list of features that you are considering for POST MVP
 ## Functional Components
