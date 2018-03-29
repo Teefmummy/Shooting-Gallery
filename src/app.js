@@ -1,13 +1,13 @@
 const game = {
   init() {
-    //click the start button to trigger level 1
+    // click the start button to trigger level 1
     $('#game-start').on('click', game.helperFunctions.hideOverlay);
-    $('div').on('click', game.helperFunctions.sayHello);
     $('#game-start').on('click', game.helperFunctions.decrimentTimer);
     $('#game-start').on('click', game.levelInfo.levelOne.loadLevel.bind(game.levelInfo.levelOne));
     $('#game-start').on('click', game.levelInfo.levelOne.placeObjects.bind(game.levelInfo.levelOne));// research bind gotcha's of "this".
     $('.row div').on('click', '.clickable', game.builder.removeObjects);
-    $('.game-page').on('click', game.helperFunctions.showOverlay);
+    // $('.game-page').on('click', game.helperFunctions.showOverlay);
+    $('#restart').on('click',game.helperFunctions.restartGame);
    },
   playerInfo: {
     score: 0,
@@ -18,6 +18,7 @@ const game = {
       cans: 10,
       bottles: 5,
       totalObjects: 15,
+      scoreThresh: 30,
       levelLocations: [],
       loadLevel() {
         let newNums = [];
@@ -41,6 +42,12 @@ const game = {
           }
         }
       },
+      completeLevel() {
+        console.log(game.playerInfo.score)
+        if (game.playerInfo.score > this.scoreThresh){
+          game.helperFunctions.showOverlay();
+        }
+      }
     },
     levelTwo: {
       cans: 20,
@@ -79,7 +86,10 @@ const game = {
     },
     showOverlay(e) {
       $('.final-screen').css('visibility', 'visible');
-      e.stopPropagation();
+      if(game.playerInfo.score > 30){
+        $('.win span').html('Win!');
+      }
+      $('.final-score span').html(game.playerInfo.score);
     },
     sayHello(e) {
       console.log('div clicked');
@@ -95,10 +105,14 @@ const game = {
         } else {
           alert('time is up!');
           clearInterval(timer);
+          game.helperFunctions.showOverlay();
         }
       }
       let timer = setInterval(tic, 1000);
       e.stopPropagation();
+    },
+    restartGame(){
+      game.init();
     },
   },
 };
