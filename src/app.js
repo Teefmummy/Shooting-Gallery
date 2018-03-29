@@ -4,28 +4,37 @@ const game = {
     $('div').on('click', game.helperFunctions.sayHello);
     $('.game-page').on('click', game.helperFunctions.showOverlay);
     $('.timer').on('click', game.helperFunctions.decrimentTimer);
-    $('.row div').on('click', game.builder.placeObjects);
-    $('.bottle').on('click', game.builder.removeObjects);
-    $('.score').on('click', game.levelInfo.levelOne.loadLevel);
+    $('.score').on('click', game.levelInfo.levelOne.loadLevel.bind(game.levelInfo.levelOne));
+    $('.score').on('click', game.levelInfo.levelOne.placeObjects.bind(game.levelInfo.levelOne));// research bind gotcha's of "this".
+    $('.row div').on('click', '.bottle', game.builder.removeObjects);
+   },
+  playerInfo: {
+    score: 0,
   },
   levelInfo: {
     levelOne: {
-      {levelTime: 15,
+      levelTime: 15,
       cans: 10,
       bottles: 5,
       totalObjects: 15,
       levelLocations: [],
       loadLevel() {
+        let newNums = [];
           for(let i = 0; i < this.totalObjects; i++) {
-            let newNums = [];
             let num = game.helperFunctions.getRandomInt();
             if (jQuery.inArray(num, newNums) === -1) {
               newNums.push(num);
             }
+            console.log(newNums);
             this.levelLocations = newNums;
           }
-        console.log(this.levelLocations);
         },
+      placeObjects() {
+        for(let i = 0; i < this.levelLocations.length; i += 1){
+         $(`.game-board .row .${this.levelLocations[i]}`).html('<div class=\'bottle\' data=\'5\'></div>');
+         // '<div class=\'bottle\'></div>'
+        }
+      },
       },
     levelTwo: {
       cans: 20,
@@ -39,16 +48,21 @@ const game = {
     },
   },
   builder: {
-    placeObjects() {
-      $(this).addClass('can');
+    placeObjects(levelArray) {
+      console.log(levelArray.length);
+      for(let i = 0; i < levelArray.length; i += 1){
+        $(`.game-board row div ${levelArray[i]}`).addClass('bottle');
+      }
     },
-    removeObjects() {
-      $(this).remove('.bottle');
+    removeObjects(e) {
+      console.log(e);
+      console.log('hey');
+      $(this).remove();
     },
   },
   helperFunctions: {
     getRandomInt() {
-      const num = Math.floor(Math.random() * (101 - 1)) + 1;
+      const num = Math.floor(Math.random() * (51 - 1)) + 1;
       return num;
     },
     hideOverlay(e) {

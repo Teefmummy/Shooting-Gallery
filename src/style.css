@@ -64,6 +64,10 @@ body {
   flex-wrap: wrap;
 
 }
+.game-page:hover {
+  cursor: crosshair;
+}
+
 .shelf {
   background-color: black;
   height: 2%;
@@ -77,6 +81,7 @@ body {
   background-color: red;
 }
 .row div {
+  display: flex;
   width: 10%;
   height: 100%;
   background-color: rgb(255,111,37);
@@ -102,15 +107,18 @@ body {
   margin: 100px auto;
 }
 .bottle {
-  height: 100%;
-  width: 100%;
+  flex-grow: 1;
+  background-position: center;
+  width: 100px;
+  height: 100px;
   background-image: url('../images/bottle.png');
+  border: none;
 }
 .can {
   background-image: url('../images/can.png');
 }
 .bee {
-  background-image: url('../images.bee.png');
+  background-image: url('../images/bee.png');
 }
 
 
