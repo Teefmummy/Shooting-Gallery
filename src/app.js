@@ -1,12 +1,13 @@
 const game = {
   init() {
-    $('button').on('click', game.helperFunctions.hideOverlay);
+    //click the start button to trigger level 1
+    $('#game-start').on('click', game.helperFunctions.hideOverlay);
     $('div').on('click', game.helperFunctions.sayHello);
+    $('#game-start').on('click', game.helperFunctions.decrimentTimer);
+    $('#game-start').on('click', game.levelInfo.levelOne.loadLevel.bind(game.levelInfo.levelOne));
+    $('#game-start').on('click', game.levelInfo.levelOne.placeObjects.bind(game.levelInfo.levelOne));// research bind gotcha's of "this".
+    $('.row div').on('click', '.clickable', game.builder.removeObjects);
     $('.game-page').on('click', game.helperFunctions.showOverlay);
-    $('.timer').on('click', game.helperFunctions.decrimentTimer);
-    $('.score').on('click', game.levelInfo.levelOne.loadLevel.bind(game.levelInfo.levelOne));
-    $('.score').on('click', game.levelInfo.levelOne.placeObjects.bind(game.levelInfo.levelOne));// research bind gotcha's of "this".
-    $('.row div').on('click', '.bottle', game.builder.removeObjects);
    },
   playerInfo: {
     score: 0,
@@ -31,11 +32,16 @@ const game = {
         },
       placeObjects() {
         for(let i = 0; i < this.levelLocations.length; i += 1){
-         $(`.game-board .row .${this.levelLocations[i]}`).html('<div class=\'bottle\' data=\'5\'></div>');
-         // '<div class=\'bottle\'></div>'
+          if(this.bottles > 0){
+            $(`.game-board .row .${this.levelLocations[i]}`).html('<div class=\'bottle clickable\' data=\'5\'></div>');
+            this.bottles -= 1;
+          } else if (this.cans > 0){
+            $(`.game-board .row .${this.levelLocations[i]}`).html('<div class=\'can clickable\' data=\'1\'></div>');
+            this.cans -= 1;
+          }
         }
       },
-      },
+    },
     levelTwo: {
       cans: 20,
       bottles: 10,
@@ -55,8 +61,10 @@ const game = {
       }
     },
     removeObjects(e) {
-      console.log(e);
-      console.log('hey');
+      let points = $(this).attr('data');
+      game.playerInfo.score += parseInt(points);
+      $('.score span').html(game.playerInfo.score);
+      console.log(game.playerInfo.score);
       $(this).remove();
     },
   },

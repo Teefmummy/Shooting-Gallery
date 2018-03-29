@@ -1,6 +1,6 @@
 body {
   font-family: 'Press Start 2P', cursive;
-  background-color: lightblue;
+  background-color: #327304;
 }
 
 .overlay {
@@ -84,8 +84,7 @@ body {
   display: flex;
   width: 10%;
   height: 100%;
-  background-color: rgb(255,111,37);
-  border-right: solid black 1px;
+  background-color: #F38709;
 }
 
 .final-screen {
@@ -115,9 +114,19 @@ body {
   border: none;
 }
 .can {
+  border: none;
+  flex-grow: 1;
+  background-position: center;
+  width: 100px;
+  height: 100px;
   background-image: url('../images/can.png');
 }
 .bee {
+  border: none;
+  flex-grow: 1;
+  background-position: center;
+  width: 100px;
+  height: 100px;
   background-image: url('../images/bee.png');
 }
 
