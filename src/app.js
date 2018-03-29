@@ -2,7 +2,7 @@ const game = {
   init() {
     // click the start button to trigger level 1
     $('#game-start').on('click', game.helperFunctions.hideOverlay);
-    $('#game-start').on('click', function(e){
+    $('#game-start').on('click', function(evt){
       game.levelBuilder(game.firstLevel);
       e.preventDefault();
     });
@@ -11,10 +11,12 @@ const game = {
    },
   playerInfo: {
     name: '',
-    score: 0,
+    currentLevel: 0,
+    currentLevelScore: 0,
+    totalScore: 0,
   },
   firstLevel: {
-    time: 15,
+    time: 10,
     cans: 10,
     bottles: 5,
     totalObjects: 15,
@@ -75,12 +77,19 @@ const game = {
     setTimer();
     placeObjects();
   },
+  nextLevel(){
+    //if score is higher than
+        // new level overlay
+    // levelbuilder(level2)
+
+  },
   playerFunctions: {
     shootTargets() {
       let points = $(this).attr('data');
-      game.playerInfo.score += parseInt(points);
-      $('.score span').html(game.playerInfo.score);
-      console.log(game.playerInfo.score);
+      game.playerInfo.totalScore += parseInt(points);
+      game.playerInfo.currentLevelScore += parseInt(points);
+      $('.score span').html(game.playerInfo.totalScore);
+      console.log(game.playerInfo.totalScore);
       $(this).remove();
     },
   },
@@ -95,12 +104,12 @@ const game = {
     },
     showOverlay(e) {
       $('.final-screen').css('visibility', 'visible');
-      if(game.playerInfo.score >= 30){
+      if(game.playerInfo.totalScore >= 30){
         $('.win span').html('Win!');
-      } else if (game.playerInfo.score < 30){
+      } else if (game.playerInfo.totalScore < 30){
         $('.win span').html('Lose!');
       }
-      $('.final-score span').html(game.playerInfo.score);
+      $('.final-score span').html(game.playerInfo.totalScore);
     },
     restartGame() {
       console.log('yo');
