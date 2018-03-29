@@ -2,72 +2,81 @@ const game = {
   init() {
     // click the start button to trigger level 1
     $('#game-start').on('click', game.helperFunctions.hideOverlay);
-    $('#game-start').on('click', game.helperFunctions.decrimentTimer);
-    $('#game-start').on('click', game.levelInfo.levelOne.loadLevel.bind(game.levelInfo.levelOne));
-    $('#game-start').on('click', game.levelInfo.levelOne.placeObjects.bind(game.levelInfo.levelOne));// research bind gotcha's of "this".
-    $('.row div').on('click', '.clickable', game.builder.removeObjects);
-    // $('.game-page').on('click', game.helperFunctions.showOverlay);
-    $('#restart').on('click',game.helperFunctions.restartGame);
+    $('#game-start').on('click', function(e){
+      game.levelBuilder(game.firstLevel);
+      e.preventDefault();
+    });
+    $('.row div').on('click', '.clickable', game.playerFunctions.shootTargets);
+    $('.restart').on('click', game.helperFunctions.restartGame);
    },
   playerInfo: {
+    name: '',
     score: 0,
   },
-  levelInfo: {
-    levelOne: {
-      levelTime: 15,
-      cans: 10,
-      bottles: 5,
-      totalObjects: 15,
-      scoreThresh: 30,
-      levelLocations: [],
-      loadLevel() {
+  firstLevel: {
+    time: 15,
+    cans: 10,
+    bottles: 5,
+    totalObjects: 15,
+  },
+  levelBuilder(level) {
+    console.log('im building');
+    // set variables for use in builder
+    let cans = level.cans;
+    let bottles = level.bottles;
+    let levelLocations = [];
+    let totalObjects = level.totalObjects;
+    // set the score on the page
+    $('.score span').html(0);
+
+    // load the locations
+    function loadLevel() {
+      // $('.landing-page').css('visibility', 'hidden');
         let newNums = [];
-          for(let i = 0; i < this.totalObjects; i++) {
+          while(levelLocations.length < totalObjects) {
             let num = game.helperFunctions.getRandomInt();
             if (jQuery.inArray(num, newNums) === -1) {
               newNums.push(num);
             }
             console.log(newNums);
-            this.levelLocations = newNums;
-          }
-        },
-      placeObjects() {
-        for(let i = 0; i < this.levelLocations.length; i += 1){
-          if(this.bottles > 0){
-            $(`.game-board .row .${this.levelLocations[i]}`).html('<div class=\'bottle clickable\' data=\'5\'></div>');
-            this.bottles -= 1;
-          } else if (this.cans > 0){
-            $(`.game-board .row .${this.levelLocations[i]}`).html('<div class=\'can clickable\' data=\'1\'></div>');
-            this.cans -= 1;
+            levelLocations = newNums;
           }
         }
-      },
-      completeLevel() {
-        console.log(game.playerInfo.score)
-        if (game.playerInfo.score > this.scoreThresh){
+    // set and start the timer
+    function setTimer() {
+      let time = level.time;// levelTime
+      $('.timer span').html(time);
+      function tic() {
+        if (time > 0) {
+          time -= 1;
+          $('.timer span').html(time);
+        } else {
+          clearInterval(timer);
           game.helperFunctions.showOverlay();
         }
       }
-    },
-    levelTwo: {
-      cans: 20,
-      bottles: 10,
-      totalObjects: 30,
-    },
-    levelThree: {
-      cans: 34,
-      bottles: 20,
-      totalObjects: 54,
-    },
-  },
-  builder: {
-    placeObjects(levelArray) {
-      console.log(levelArray.length);
-      for(let i = 0; i < levelArray.length; i += 1){
-        $(`.game-board row div ${levelArray[i]}`).addClass('bottle');
+      let timer = setInterval(tic, 1000);
+
+    }
+    // place the objects
+    function placeObjects() {
+        for(let i = 0; i < levelLocations.length; i += 1){
+          if (bottles > 0){
+            $(`.game-board .row .${levelLocations[i]}`).html('<div class=\'bottle clickable\' data=\'5\'></div>');
+            bottles -= 1;
+          } else if (cans > 0){
+            $(`.game-board .row .${levelLocations[i]}`).html('<div class=\'can clickable\' data=\'1\'></div>');
+            cans -= 1;
+          }
+        }
       }
-    },
-    removeObjects(e) {
+    // call the functions
+    loadLevel();
+    setTimer();
+    placeObjects();
+  },
+  playerFunctions: {
+    shootTargets() {
       let points = $(this).attr('data');
       game.playerInfo.score += parseInt(points);
       $('.score span').html(game.playerInfo.score);
@@ -82,40 +91,26 @@ const game = {
     },
     hideOverlay(e) {
       $('.landing-page').css('visibility', 'hidden');
-      e.stopPropagation();
+      $('.final-screen').css('visibility', 'hidden');
     },
     showOverlay(e) {
       $('.final-screen').css('visibility', 'visible');
-      if(game.playerInfo.score > 30){
+      if(game.playerInfo.score >= 30){
         $('.win span').html('Win!');
+      } else if (game.playerInfo.score < 30){
+        $('.win span').html('Lose!');
       }
       $('.final-score span').html(game.playerInfo.score);
     },
-    sayHello(e) {
-      console.log('div clicked');
-      e.stopPropagation();
-    },
-    decrimentTimer(e) {
-      let time = 12;// levelTime
-      $('.timer span').html(time);
-      function tic() {
-        if (time > 0) {
-          time -= 1;
-          $('.timer span').html(time);
-        } else {
-          alert('time is up!');
-          clearInterval(timer);
-          game.helperFunctions.showOverlay();
-        }
-      }
-      let timer = setInterval(tic, 1000);
-      e.stopPropagation();
-    },
-    restartGame(){
-      game.init();
+    restartGame() {
+      console.log('yo');
+      game.playerInfo.score = 0;
+      game.helperFunctions.hideOverlay();
+      game.levelBuilder(game.firstLevel);
     },
   },
 };
+
 $(document).ready(function(){
   game.init();
 });
