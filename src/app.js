@@ -50,7 +50,8 @@ const game = {
     let levelLocations = [];
     let totalObjects = level.totalObjects;
     // set the score on the page
-    $('.score span').html(game.playerInfo.totalScore);
+    game.playerInfo.currentLevelScore = 0;
+    $('.score span').html(0);
 
     // load the locations
     function loadLevel() {
@@ -61,7 +62,6 @@ const game = {
             if (jQuery.inArray(num, newNums) === -1) {
               newNums.push(num);
             }
-            console.log(newNums);
             levelLocations = newNums;
           }
         }
@@ -110,12 +110,10 @@ const game = {
   },
   playerFunctions: {
     shootTargets(e) {
-      console.log(e.target);
       let points = $(this).attr('data');
       game.playerInfo.totalScore += parseInt(points);
       game.playerInfo.currentLevelScore += parseInt(points);
-      $('.score span').html(game.playerInfo.totalScore);
-      console.log(game.playerInfo.totalScore);
+      $('.score span').html(game.playerInfo.currentLevelScore);
       $(this).remove();
     },
   },
@@ -125,7 +123,7 @@ const game = {
       return num;
     },
     levelCompleteScreen() {
-      $('.level-complete-screen .final-score span').html(game.playerInfo.currentLevelScore);
+      $('.level-complete-screen .final-score span').html(game.playerInfo.totalScore);
       $('.level-complete-screen').css('visibility', 'visible');
     },
     hideOverlay(e) {
