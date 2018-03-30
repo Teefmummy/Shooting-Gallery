@@ -47,6 +47,7 @@ button {
 .game-details {
   background-color: rgba(255,199,0,1);
   padding: 5px 12px;
+  border: solid black 3px;
   border-radius: 0 0 5% 0;
   position: absolute;
   top: 0;
@@ -54,6 +55,7 @@ button {
   width: 283px;
 }
 .game-page .game-board {
+  border: black solid 2px;
   justify-content: flex-start;
   height: 525px;
   width: 80%;
@@ -87,9 +89,8 @@ button {
   height: 100%;
 }
 .level-complete-screen {
-  background-image: url('../images/bee.png');
   visibility: hidden;
-  background-color: rgba(255,233,172,.9);
+  background-color: rgba(0,0,0,.9);
   z-index: 9000;
 }
 .level-complete-screen .new-level-container {
@@ -138,7 +139,7 @@ button {
   width: 100px;
   height: 100px;
   background-repeat: no-repeat;
-  background-image: url('../images/can.png');
+  background-image: url('../images/can 2.png');
 }
 .bee {
   border: none;

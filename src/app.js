@@ -2,19 +2,18 @@ const game = {
   init() {
     // click the start button to trigger level 1
     $('#game-start').on('click', game.helperFunctions.hideOverlay);
-    $('#game-start').on('click', function(e){
+    $('#game-start').on('click', function(e) {
       game.levelBuilder(game.levels[0]);
       e.preventDefault();
     });
     $('.row div').on('click', '.clickable', game.playerFunctions.shootTargets);
     $('.restart').on('click', game.helperFunctions.restartGame);
     $('.next').on('click', game.helperFunctions.hideOverlay);
-    $('.next').on('click', function(e){
+    $('.next').on('click', function(e) {
       game.levelBuilder(game.levels[game.playerInfo.currentLevel]);
       e.preventDefault();
-    })
-
-   },
+    });
+  },
   playerInfo: {
     name: '',
     currentLevel: 0,
@@ -38,17 +37,16 @@ const game = {
       time: 15,
       cans: 20,
       bottles: 10,
-      totalObjects: 30
-    }
+      totalObjects: 30,
+    },
   ],
 
   levelBuilder(level) {
-    console.log('im building');
     // set variables for use in builder
     let cans = level.cans;
     let bottles = level.bottles;
     let levelLocations = [];
-    let totalObjects = level.totalObjects;
+    const totalObjects = level.totalObjects;
     // set the score on the page
     game.playerInfo.currentLevelScore = 0;
     $('.score span').html(0);
