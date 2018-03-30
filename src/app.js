@@ -3,14 +3,14 @@ const game = {
     // click the start button to trigger level 1
     $('#game-start').on('click', game.helperFunctions.hideOverlay);
     $('#game-start').on('click', function(e){
-      game.levelBuilder(game.firstLevel);
+      game.levelBuilder(game.levels[0]);
       e.preventDefault();
     });
     $('.row div').on('click', '.clickable', game.playerFunctions.shootTargets);
     $('.restart').on('click', game.helperFunctions.restartGame);
     $('.next').on('click', game.helperFunctions.hideOverlay);
     $('.next').on('click', function(e){
-      game.levelBuilder(game.secondLevel);
+      game.levelBuilder(game.levels[game.playerInfo.currentLevel]);
       e.preventDefault();
     })
 
@@ -21,18 +21,27 @@ const game = {
     currentLevelScore: 0,
     totalScore: 0,
   },
-  firstLevel: {
-    time: 10,
-    cans: 10,
-    bottles: 5,
-    totalObjects: 15,
-  },
-  secondLevel: {
-    time: 12,
-    cans: 15,
-    bottles: 10,
-    totalObjects: 25,
-  },
+  levels: [
+    {
+      time: 10,
+      cans: 10,
+      bottles: 5,
+      totalObjects: 15,
+    },
+    {
+      time: 12,
+      cans: 15,
+      bottles: 10,
+      totalObjects: 25,
+    },
+    {
+      time: 15,
+      cans: 20,
+      bottles: 10,
+      totalObjects: 30
+    }
+  ],
+
   levelBuilder(level) {
     console.log('im building');
     // set variables for use in builder
@@ -116,6 +125,7 @@ const game = {
       return num;
     },
     levelCompleteScreen() {
+      $('.level-complete-screen .final-score span').html(game.playerInfo.currentLevelScore);
       $('.level-complete-screen').css('visibility', 'visible');
     },
     hideOverlay(e) {
@@ -137,7 +147,7 @@ const game = {
       game.playerInfo.totalScore = 0;
       game.helperFunctions.hideOverlay();
       $('.clickable').remove();
-      game.levelBuilder(game.firstLevel);
+      game.levelBuilder(game.levels[0]);
     },
   },
 };

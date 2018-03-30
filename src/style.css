@@ -147,6 +147,18 @@ button {
   background-image: url('../images/bee.png');
 }
 .clickable {
+  animation-name: popin;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes popin {
+    0% {
+        transform: 0;
+    }
+    100% {
+        translate: 100;
+    }
 }
 
 
