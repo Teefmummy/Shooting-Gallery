@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Shooting Gallery</title>
+  <link rel="icon" type="image/png" href="images/bullet.png">
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -15,6 +16,7 @@
   <div class="landing-page overlay">
     <div class="landing-container">
       <h1>Shooting Gallery</h1>
+      <img src="images/bullet.png" alt="bullet">
       <button id="game-start">Get Shootin'!</button>
     </div>
   </div>
@@ -90,6 +92,13 @@
         </div>
         <div class="shelf"></div>
       </div>
+  </div>
+  <div class='level-complete-screen overlay'>
+    <div class="new-level-container">
+      <h2 class="win">Great Job! Keep Going</h2>
+      <h3 class="final-score">Total score: <span></span></h3>
+      <button class="next">Next Level</button>
+    </div>
   </div>
   <div class="final-screen overlay">
     <div class="final-container">

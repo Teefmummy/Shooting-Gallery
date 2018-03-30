@@ -2,12 +2,18 @@ const game = {
   init() {
     // click the start button to trigger level 1
     $('#game-start').on('click', game.helperFunctions.hideOverlay);
-    $('#game-start').on('click', function(evt){
+    $('#game-start').on('click', function(e){
       game.levelBuilder(game.firstLevel);
       e.preventDefault();
     });
     $('.row div').on('click', '.clickable', game.playerFunctions.shootTargets);
     $('.restart').on('click', game.helperFunctions.restartGame);
+    $('.next').on('click', game.helperFunctions.hideOverlay);
+    $('.next').on('click', function(e){
+      game.levelBuilder(game.secondLevel);
+      e.preventDefault();
+    })
+
    },
   playerInfo: {
     name: '',
@@ -21,6 +27,12 @@ const game = {
     bottles: 5,
     totalObjects: 15,
   },
+  secondLevel: {
+    time: 12,
+    cans: 15,
+    bottles: 10,
+    totalObjects: 25,
+  },
   levelBuilder(level) {
     console.log('im building');
     // set variables for use in builder
@@ -29,7 +41,7 @@ const game = {
     let levelLocations = [];
     let totalObjects = level.totalObjects;
     // set the score on the page
-    $('.score span').html(0);
+    $('.score span').html(game.playerInfo.totalScore);
 
     // load the locations
     function loadLevel() {
@@ -54,7 +66,8 @@ const game = {
           $('.timer span').html(time);
         } else {
           clearInterval(timer);
-          game.helperFunctions.showOverlay();
+          game.playerInfo.currentLevel += 1;
+          game.nextLevel();
         }
       }
       let timer = setInterval(tic, 1000);
@@ -78,13 +91,17 @@ const game = {
     placeObjects();
   },
   nextLevel(){
-    //if score is higher than
-        // new level overlay
-    // levelbuilder(level2)
-
+    if (game.playerInfo.currentLevel === 3 && game.playerInfo.currentLevelScore > 30){
+      game.helperFunctions.showFinal();
+    } else if (game.playerInfo.currentLevel < 3 && game.playerInfo.currentLevelScore > 30){
+      game.helperFunctions.levelCompleteScreen();
+    } else {
+      game.helperFunctions.showFinal();
+    }
   },
   playerFunctions: {
-    shootTargets() {
+    shootTargets(e) {
+      console.log(e.target);
       let points = $(this).attr('data');
       game.playerInfo.totalScore += parseInt(points);
       game.playerInfo.currentLevelScore += parseInt(points);
@@ -98,11 +115,15 @@ const game = {
       const num = Math.floor(Math.random() * (51 - 1)) + 1;
       return num;
     },
+    levelCompleteScreen() {
+      $('.level-complete-screen').css('visibility', 'visible');
+    },
     hideOverlay(e) {
       $('.landing-page').css('visibility', 'hidden');
       $('.final-screen').css('visibility', 'hidden');
+      $('.level-complete-screen').css('visibility', 'hidden');
     },
-    showOverlay(e) {
+    showFinal(e) {
       $('.final-screen').css('visibility', 'visible');
       if(game.playerInfo.totalScore >= 30){
         $('.win span').html('Win!');
@@ -113,8 +134,9 @@ const game = {
     },
     restartGame() {
       console.log('yo');
-      game.playerInfo.score = 0;
+      game.playerInfo.totalScore = 0;
       game.helperFunctions.hideOverlay();
+      $('.clickable').remove();
       game.levelBuilder(game.firstLevel);
     },
   },
