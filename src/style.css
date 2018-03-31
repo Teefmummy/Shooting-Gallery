@@ -45,14 +45,24 @@ button {
 }
 
 .game-details {
-  background-color: rgba(255,199,0,1);
   padding: 5px 12px;
+  background-color: rgba(255,199,0,1);
   border: solid black 3px;
   border-radius: 0 0 5% 0;
   position: absolute;
   top: 0;
   left: 0;
-  width: 283px;
+  width: 313px;
+}
+.game-details-2 {
+  padding: 5px 12px;
+  background-color: rgba(255,199,0,1);
+  border: solid black 3px;
+  border-radius: 0 0 0 5%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 313px;
 }
 .game-page .game-board {
   border: black solid 2px;

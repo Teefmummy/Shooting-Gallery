@@ -33,7 +33,7 @@ const game = {
       cans: 15,
       bottles: 10,
       totalObjects: 25,
-      points: 50,
+      points: 55,
     },
     {
       time: 15,
@@ -51,11 +51,11 @@ const game = {
     const totalObjects = level.totalObjects;
     // set the score on the page
     game.playerInfo.currentLevelScore = 0;
+    $('.goal span').html(level.points);
+    $('.level span').html(game.playerInfo.currentLevel + 1);
     $('.score span').html(0);
-
     // load the locations
     function loadLevel() {
-      // $('.landing-page').css('visibility', 'hidden');
       const newNums = [];
       while (levelLocations.length < totalObjects) {
         const num = game.helperFunctions.getRandomInt();
@@ -79,7 +79,6 @@ const game = {
           game.displayScreen();
         }
       }
-
     }
     // place the objects
     function placeObjects() {
