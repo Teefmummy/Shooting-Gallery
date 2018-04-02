@@ -118,16 +118,14 @@ Based on the initial logic defined in the previous game phases section try and b
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. 
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Game Logic | H | 10hrs|  |  |
-| Game page | H | 5hrs|  |  |
-| target sprites | L | 4hrs|  |  |
-| game board sprites | L | 2hrs|  |  |
-| landing Page overlay| H | 3hrs|  |  |
-| Win/Loss page overlay | H | 2hrs|  |  |
-| Post MVP | H | 10hrs|  |  |
-| Total |  | 36hrs|  |  |
+| Game Logic | H | 10hrs| 12hrs |  |
+| Game page | H | 5hrs| 3hrs |  |
+| target sprites | L | 4hrs| 2hrs |  |
+| landing Page & Win/Loss page overlay| H | 4hrs| 5hrs|  |
+| Post MVP | H | 10hrs| 3hrs |  |
+| Total |  | 33hrs| 26hrs |  |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.

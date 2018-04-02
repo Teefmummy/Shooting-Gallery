@@ -2,7 +2,6 @@ body {
   font-family: 'Press Start 2P', cursive;
   background-color: #327304;
 }
-
 .overlay {
   position: absolute;
   top: 0;
@@ -220,8 +219,4 @@ button {
 .high-scores button {
  margin: 0px;
 }
-
-
-
-
 

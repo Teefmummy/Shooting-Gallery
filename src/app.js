@@ -14,7 +14,7 @@ const game = {
       game.levelBuilder(game.levels[game.playerInfo.currentLevel]);
       e.preventDefault();
     });
-    $('.best').on('click', function(e){
+    $('.best').on('click', function () {
       game.trackScores();
     });
   },
@@ -162,12 +162,12 @@ const game = {
     game.playerInfo.totalScore += parseInt(points, 10);
     game.playerInfo.currentLevelScore += parseInt(points, 10);
     $('.score span').html(game.playerInfo.currentLevelScore);
-    if($(this).hasClass('bottle')){
+    if($(this).hasClass('bottle')) {
       $(this).addClass('bottle-broken');
-    } else if ($(this).hasClass('can')){
+    } else if ($(this).hasClass('can')) {
       $(this).addClass('can-broken');
     }
-    window.setTimeout((e) => $(this).remove(),400);
+    window.setTimeout(() => $(this).remove(), 200);
   },
   getPlayerName() {
     let playerName = $('.landing-container input').val();
