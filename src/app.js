@@ -48,7 +48,7 @@ const game = {
     },
   ],
   highScores: [{
-    name: 'Andrew',
+    name: 'Moose',
     score: 165,
   },
   {
@@ -56,7 +56,7 @@ const game = {
     score: 155,
   },
   {
-    name: 'jpack420',
+    name: 'Teef',
     score: 130,
   }
   ,{
@@ -64,7 +64,7 @@ const game = {
     score: 100,
   },
   {
-    name: 'Apple',
+    name: 'Tyrone',
     score: 95,
   }
   ],
@@ -162,7 +162,12 @@ const game = {
     game.playerInfo.totalScore += parseInt(points, 10);
     game.playerInfo.currentLevelScore += parseInt(points, 10);
     $('.score span').html(game.playerInfo.currentLevelScore);
-    $(this).remove();
+    if($(this).hasClass('bottle')){
+      $(this).addClass('bottle-broken');
+    } else if ($(this).hasClass('can')){
+      $(this).addClass('can-broken');
+    }
+    window.setTimeout((e) => $(this).remove(),400);
   },
   getPlayerName() {
     let playerName = $('.landing-container input').val();
