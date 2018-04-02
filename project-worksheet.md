@@ -132,7 +132,8 @@ Helper functions should be generic enought that they can be reused in other appl
 
 | Function | Description | 
 | --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string | 
+| getRandomInt | This will provide a random number with a max and min value | 
+| compareScores | This can be used within the .sort method for arrays for sorting numbers in order of highest to lowest | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
