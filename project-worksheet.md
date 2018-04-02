@@ -138,10 +138,27 @@ Helper functions should be generic enought that they can be reused in other appl
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
 
+jQuery - Used for Dom Manipulation.
+
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  
-
+```Javascript
+function setTimer() {
+      let time = level.time;// levelTime
+      $('.timer span').html(time);
+      const timer = setInterval(tic, 1000);
+      function tic() {
+        if (time > 0) {
+          time -= 1;
+          $('.timer span').html(time);
+        } else {
+          clearInterval(timer);
+          game.displayScreen();
+        }
+      }
+    }
+````
 ## jQuery Discoveries
  Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
 
