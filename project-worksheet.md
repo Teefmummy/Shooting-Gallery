@@ -142,7 +142,9 @@ jQuery - Used for Dom Manipulation.
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  
+Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+
+This is a function I used for setting the timer on the page. It decriments the timer once every second and calls the displayscreen function for either moving on to the next level or completing the game. I am happy with how it works and I feel like it is simple enough to use in later projects.
 ```Javascript
 function setTimer() {
       let time = level.time;// levelTime
@@ -162,11 +164,23 @@ function setTimer() {
 ## jQuery Discoveries
  Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
 
+ $jQuery.inArray();
+ checks to see if a value exists within a given array. if it doesnt exist it returns -1. I used this in generating my array of random values. Basically I had a problem with randomly generating the same number twice and I had to make sure that none of my objects overlapped with one another. 
+ $.hasClass();
+ returns a boolean for whether or not the object has a certain class. used in my click target function. 
+
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
 
+ There were not too many changes made from my original concept. I did not get around to making the Bee target. 
+
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
+ 
+ The first major obstacle I encountered was creating an array of random numbers that was (a) of a particular length and (b) contained no repeat random numbers. In trying to figure this issue out I went to the student resource center for help and the instructor there inspired me to clean up my code drastically. After I did that, everything came much easier. The problem of creating the array was really just the catalyst for reorganizing my code for easier reading and use. 
+
+ Another obstacle I faced was creating a single function to handle the display of the various overlays in the game. Before, I had multiple functions which were triggered on the click of specific buttons. When I started trying to figure out a way to restart the game, I found that this was unwieldy. After realizing this, and thinking back to my earlier issue regarding complexity, I decided to clean this up into a single function that handled game logic and the displays. 
+
 
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
