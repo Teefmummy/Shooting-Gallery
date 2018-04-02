@@ -144,7 +144,7 @@ const game = {
       const num = Math.floor(Math.random() * (51 - 1)) + 1;
       return num;
     },
-    hideOverlay(e) {
+    hideOverlay() {
       $('.landing-page').css('visibility', 'hidden');
       $('.final-screen').css('visibility', 'hidden');
       $('.level-complete-screen').css('visibility', 'hidden');
