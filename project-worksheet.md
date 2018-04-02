@@ -139,6 +139,7 @@ Helper functions should be generic enought that they can be reused in other appl
  Use this section to list all supporting libraries and thier role in the project. 
 
 jQuery - Used for Dom Manipulation.
+PixilArt.com - Not a library, but I used this site for the creation of the targets, bee, and bullet. 
 
 ## Code Snippet
 
@@ -168,11 +169,7 @@ function setTimer() {
 | --- | :---: |  
 | $jQuery.inArray(); |  checks to see if a value exists within a given array. if it doesnt exist it returns -1. I used this in generating my array of random values. Basically I had a problem with randomly generating the same number twice and I had to make sure that none of my objects overlapped with one another. | 
 | $.hasClass(); | returns a boolean for whether or not the object has a certain class. used in my click target function.  | 
-
- $jQuery.inArray();
- checks to see if a value exists within a given array. if it doesnt exist it returns -1. I used this in generating my array of random values. Basically I had a problem with randomly generating the same number twice and I had to make sure that none of my objects overlapped with one another. 
- $.hasClass();
- returns a boolean for whether or not the object has a certain class. used in my click target function. 
+ 
 
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
