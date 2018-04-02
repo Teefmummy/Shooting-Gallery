@@ -14,6 +14,9 @@ const game = {
       game.levelBuilder(game.levels[game.playerInfo.currentLevel]);
       e.preventDefault();
     });
+    $('.best').on('click', function(e){
+      game.trackScores();
+    });
   },
   playerInfo: {
     name: '',
@@ -166,9 +169,8 @@ const game = {
     game.playerInfo.name = playerName;
   },
   trackScores() {
-    let playObj = {'name':'game.playerInfo.name', 'score':'game.playerInfo.totalScore'};
+    const playObj = { name: `${game.playerInfo.name}`, score: parseInt(`${game.playerInfo.totalScore}`, 10) };
     game.highScores.push(playObj);
-    // game.highScores.map((x) => console.log(x));
     let compareScores = function(a, b){
       if (a.score > b.score) {
         return -1;
@@ -185,6 +187,8 @@ const game = {
     for(let i = 0; i < game.highScores.length; i += 1){
       let $scoreObj = $(`.score-board .hs${i+1}`).html(`${i + 1} - ${game.highScores[i].name} --- ${game.highScores[i].score}`);
     }
+    game.helperFunctions.hideOverlay();
+    $('.high-scores').css('visibility', 'visible');
   },
   helperFunctions: {
     getRandomInt() {
@@ -195,11 +199,11 @@ const game = {
       $('.landing-page').css('visibility', 'hidden');
       $('.final-screen').css('visibility', 'hidden');
       $('.level-complete-screen').css('visibility', 'hidden');
+      $('.high-scores').css('visibility', 'hidden');
     },
   },
 };
 
 $(document).ready(function(){
-  game.trackScores();
   game.init();
 });

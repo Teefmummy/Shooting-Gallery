@@ -182,23 +182,27 @@ button {
   flex-direction: column;
   margin: auto;
   width: 1000px;
-  margin: 215px auto;
+  margin: 200px auto;
   font-size: 36px;
 }
 .high-scores h2 {
+  height: 20%;
   border-bottom: solid black 3px;
 }
 .score-board {
-
   margin: 5px 0 0 150px;
   width: 100%;
   list-style: none;
   align-items: left;
 }
 .score-board li {
-  font-size: 26px;
+  font-size: 20px;
   padding: 5px;
 }
+.high-scores button {
+ margin: 0px;
+}
+
 
 
 
