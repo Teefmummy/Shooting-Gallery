@@ -4,6 +4,7 @@ const game = {
     $('#game-start').on('click', function(e) {
       game.helperFunctions.hideOverlay();
       game.levelBuilder(game.levels[0]);
+      game.getPlayerName();
       e.preventDefault();
     });
     $('.row div').on('click', '.clickable', game.shootTargets);
@@ -42,6 +43,27 @@ const game = {
       totalObjects: 30,
       points: 60,
     },
+  ],
+  highScores: [{
+    name: 'Andrew',
+    score: 165,
+  },
+  {
+    name: 'Fish',
+    score: 155,
+  },
+  {
+    name: 'jpack420',
+    score: 130,
+  }
+  ,{
+    name: 'M&M',
+    score: 100,
+  },
+  {
+    name: 'Apple',
+    score: 95,
+  }
   ],
   levelBuilder(level) {
     // set variables for use in builder
@@ -139,6 +161,31 @@ const game = {
     $('.score span').html(game.playerInfo.currentLevelScore);
     $(this).remove();
   },
+  getPlayerName() {
+    let playerName = $('.landing-container input').val();
+    game.playerInfo.name = playerName;
+  },
+  trackScores() {
+    let playObj = {'name':'game.playerInfo.name', 'score':'game.playerInfo.totalScore'};
+    game.highScores.push(playObj);
+    // game.highScores.map((x) => console.log(x));
+    let compareScores = function(a, b){
+      if (a.score > b.score) {
+        return -1;
+      } else if (a.score < b.score){
+        return 1;
+      } else if (a.score === b.score){
+        return 0;
+      }
+    };
+    game.highScores.sort(compareScores);
+    if (game.highScores.length > 5) {
+      game.highScores.length = 5;
+    }
+    for(let i = 0; i < game.highScores.length; i += 1){
+      let $scoreObj = $(`.score-board .hs${i+1}`).html(`${i + 1} - ${game.highScores[i].name} --- ${game.highScores[i].score}`);
+    }
+  },
   helperFunctions: {
     getRandomInt() {
       const num = Math.floor(Math.random() * (51 - 1)) + 1;
@@ -153,5 +200,6 @@ const game = {
 };
 
 $(document).ready(function(){
+  game.trackScores();
   game.init();
 });

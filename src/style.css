@@ -173,6 +173,32 @@ button {
     100% {
     }
 }
+.high-scores {
+  visibility: hidden;
+  align-items: center;
+  background-color: rgba(212,25,66,1);
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 1000px;
+  margin: 215px auto;
+  font-size: 36px;
+}
+.high-scores h2 {
+  border-bottom: solid black 3px;
+}
+.score-board {
+
+  margin: 5px 0 0 150px;
+  width: 100%;
+  list-style: none;
+  align-items: left;
+}
+.score-board li {
+  font-size: 26px;
+  padding: 5px;
+}
 
 
 
