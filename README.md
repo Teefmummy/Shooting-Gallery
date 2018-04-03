@@ -6,12 +6,12 @@ This schedule will be used to keep track of your progress throughout the week an
 
 |  Day | Deliverable | Status |
 |---|---|---|
-|Day 1: Tue| Wireframes and Priority Matrix|
-|Day 2: Wed| Project Approval /  Pseudocode / actual code|
-|Day 3: Thur| Basic Clickable Model |
-|Day 4: Fri| Working Prototype |
-|Day 5: Sat| Final Working Project |
-|Day 6: Sun| Bugs / Stylying / PostMVP |
+|Day 1: Tue| Wireframes and Priority Matrix| Complete |
+|Day 2: Wed| Project Approval /  Pseudocode / actual code| Complete |
+|Day 3: Thur| Basic Clickable Model | Complete |
+|Day 4: Fri| Working Prototype | Complete |
+|Day 5: Sat| Final Working Project | Complete|
+|Day 6: Sun| Bugs / Stylying / PostMVP | Never-ending|
 |Day 7: Mon| Project Presentations |
 
 
