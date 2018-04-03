@@ -1,6 +1,7 @@
 body {
   font-family: 'Press Start 2P', cursive;
   background-color: #327304;
+  height: 100%;
 }
 .overlay {
   position: absolute;
@@ -19,12 +20,12 @@ body {
 .landing-container {
   align-items: center;
   background-color: rgba(212,25,66,1);
-  border-radius: 5%;
+  border-radius: 5vw 5vh;
   display: flex;
   flex-direction: column;
   margin: auto;
   text-align: center;
-  width: 1000px;
+  width: 70vw;
   margin: 215px auto;
 }
 
