@@ -1,9 +1,9 @@
 body {
   font-family: 'Press Start 2P', cursive;
   background-color: #327304;
-  height: 100%;
 }
 .overlay {
+  overflow:auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -48,21 +48,21 @@ button {
   padding: 5px 12px;
   background-color: rgba(255,199,0,1);
   border: solid black 3px;
-  border-radius: 0 0 5% 0;
+  border-radius: 0 0 5vh 0;
   position: absolute;
   top: 0;
   left: 0;
-  width: 313px;
+  width: 40vh;
 }
 .game-details-2 {
   padding: 5px 12px;
   background-color: rgba(255,199,0,1);
   border: solid black 3px;
-  border-radius: 0 0 0 5%;
+  border-radius: 0 0 0 5vh;
   position: absolute;
   top: 0;
   right: 0;
-  width: 313px;
+  width: 40vh;
 }
 .game-page .game-board {
   border: black solid 2px;
@@ -77,7 +77,7 @@ button {
   flex-wrap: wrap;
 
 }
-.game-page:hover {
+.game-board:hover {
   cursor: crosshair;
 }
 
