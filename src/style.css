@@ -31,15 +31,15 @@ body {
 }
 
 .landing-container h1{
-  padding: 10px;
-  margin: 10px auto 10px auto;
+  padding: 1vh;
+  margin: 2vh auto 1vh auto;
 }
 
 button {
   border: black solid 2px;
   background-color: rgb(239, 192, 46);
   height: 50px;
-  width: 300px;
+  width: 30vw;
   margin: 50px;
   border-radius: 0% 60% 60% 0%;
   font-family: 'Press Start 2P', cursive;
@@ -107,13 +107,13 @@ button {
 .level-complete-screen .new-level-container {
   align-items: center;
   background-color: rgba(212,25,66,1);
-  border-radius: 5%;
+  border-radius: 5vh;
   display: flex;
   flex-direction: column;
-  margin: auto;
   text-align: center;
-  width: 1000px;
-  margin: 100px auto;
+  height: 35vh;
+  width: 70vw;
+  margin: 25vh auto;
 }
 
 .final-screen {
@@ -126,13 +126,14 @@ button {
 .final-screen .final-container {
   align-items: center;
   background-color: rgba(212,25,66,1);
-  border-radius: 5%;
+  border-radius: 5vh;
   display: flex;
   flex-direction: column;
   margin: auto;
   text-align: center;
-  width: 1000px;
-  margin: 100px auto;
+  height: 50vh;
+  width: 70vw;
+  margin: 25vh auto;
 }
 .bottle {
   background-repeat: no-repeat;
