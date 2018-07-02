@@ -9,7 +9,7 @@ There are three levels, each of increasing difficulty.
 
 ## Wireframes
 Include images of your wireframes. 
-![wireframe](http://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1522185190/project%201%20wireframe/20180327_112841.jpg | width=100)
+![wireframe](http://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1522185190/project%201%20wireframe/20180327_112841.jpg =250)
 
 (https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112854.jpg)
 (https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112900.jpg)
