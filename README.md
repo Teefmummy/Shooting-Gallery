@@ -33,15 +33,6 @@ Cans are worth 1 point while bottles are worth 5.
 If the user fails to reach the score threshold then they will be direct to a page where they can restart the game.
 
 
-## MVP 
-
-Include the full list of features that will be part of your MVP 
-a board that populates with clickable objects that has a win and loss condition.
-
-The game will have clickable divs that give you score and a timer which counts down. 
-the landing page will lead to the game page
-
-
 ## Helper Functions
 
 | Function | Description | 
@@ -55,7 +46,6 @@ jQuery - Used for Dom Manipulation.
 PixilArt.com - I used this site for the creation of the targets, bee, and bullet. 
 
 ## Code Snippet
-
 
 This is a function I used for setting the timer on the page. It decriments the timer once every second and calls the displayscreen function for either moving on to the next level or completing the game. I am happy with how it works and I feel like it is simple enough to use in later projects.
 ```Javascript
