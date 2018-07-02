@@ -1,4 +1,4 @@
-/node_modules/
+/node_modules
 /.eslintrc.yml
 /model.md
 /package-lock.json
