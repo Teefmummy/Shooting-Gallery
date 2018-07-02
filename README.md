@@ -8,9 +8,8 @@ There are three levels, each of increasing difficulty.
 
 
 ## Wireframes
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
 Include images of your wireframes. 
-![](https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112841.jpg | width=100)
+![wireframe](https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112841.jpg | width=100)
 
 (https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112854.jpg)
 (https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112900.jpg)
