@@ -8,14 +8,9 @@ There are three levels, each of increasing difficulty.
 
 
 ## Wireframes
-Include images of your wireframes. 
-![wireframe](http://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1522185190/project%201%20wireframe/20180327_112841.jpg =250x)
-<img src="http://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1522185190/project%201%20wireframe/20180327_112841.jpg" width="200" height="200" />
 
-(https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112854.jpg)
-(https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112900.jpg)
-(https://res.cloudinary.com/teefmummy/image/upload/v1522185190/20180327_112850.jpg)
-(https://res.cloudinary.com/teefmummy/image/upload/v1522185191/20180327_112858.jpg)
+<img src="http://res.cloudinary.com/teefmummy/image/upload/a_auto_right/v1522185190/project%201%20wireframe/20180327_112841.jpg" width="400" height="400" />
+<img src="http://res.cloudinary.com/teefmummy/image/upload/v1522185190/project%201%20wireframe/20180327_112850.jpg" width="400" height="400" />
 
 ## Game Components
 
